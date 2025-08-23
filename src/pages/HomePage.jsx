@@ -1,8 +1,14 @@
+import Header from "../components/layout/Header"
+
 
 
 const HomePage = () => {
   return (
-    <div>HomePage</div>
+     <div className=" min-h-screen bg-white">
+
+         <Header/>
+
+     </div>
   )
 }
 
