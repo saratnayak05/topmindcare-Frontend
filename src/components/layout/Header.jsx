@@ -7,7 +7,7 @@ const Header = () => {
   const [isMenuOpen, setisMenuOpen] = useState(false);
 
   return (
-    <header className=" border-b border-gray-900/10 backdrop-blur-sm ">
+    <header className=" border-b border-gray-900/10  sticky  bg-pink-600/10 backdrop-blur-sm">  {/*add top-0*/}
 
       <div className="container max-w-7xl mx-auto ">
 
@@ -42,11 +42,11 @@ const Header = () => {
 
             {/*dark mode button*/}
 
-            <button
+            <button 
               onClick={() => {
                 setisMenuOpen(!isMenuOpen);
               }}
-              className="p-1 bg-[var(--primary-btn)] rounded-md">
+              className="p-1 rounded-md relative z-1 mr-1 ">
               {isMenuOpen ? <X size={27} /> : <Menu size={27} />}
             </button>
 
@@ -54,14 +54,14 @@ const Header = () => {
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-500/20 py-4">
-            <nav className=" flex flex-col space-y-4">
+          <div className="md:hidden fixed top-2 right-1 w-64 rounded-2xl bg-amber-50   border-gray-500/20 ">
+            <nav className=" flex flex-col space-y-4 py-3">
               {navItems.map((item) => (
                 <a
                   key={item.id}
                   href={item.href}
                   onClick={() => setisMenuOpen(false)}
-                  className=" text-2xl px-4"
+                  className=" text-xl px-4 font-semibold text-slate-700"
                 >
                   {item.label}
                 </a>
